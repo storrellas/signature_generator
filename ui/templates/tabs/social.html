@@ -2,17 +2,35 @@
 
 <div class="form-group">
   <label for="exampleInputEmail1">Caption</label>
-  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Síguenos">
   <small id="emailHelp" class="form-text text-muted"></small>
 </div>
 
 <hr/>
 
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</link>
+
 <div class="form-group">
   <div id="social_sink"></div>
-  <label for="exampleInputEmail1">Agregar links y editar orden</label>
-  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-  <small id="emailHelp" class="form-text text-muted"></small>
+  <label for="exampleInputEmail1">Agregar links</label>
+  <!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+  <small id="emailHelp" class="form-text text-muted"></small> -->
+  <div class="row">
+    <div class="col-1">
+      <img alt="Linkedin" src="{% static 'img/facebook.png' %}" width="24px"></img>
+    </div>
+    <div class="col-10">
+      <input class="form-control" type="email" placeholder="m.bernal@mail.com" id="skype-input">
+    </div>
+    <div class="col-1">
+      <a className="social-icon"
+        data-toggle="tooltip"
+        data-placement="top">
+        <i class="fa fa-close" style="font-size:16px; color:red" ></i>
+      </a>
+    </div>
+  </div>
 </div>
 
 <script type="text/text/javascript">
@@ -22,7 +40,32 @@ $(document).ready(function(){
 </script>
 
 <script type="text/babel">
-  class SocialLink extends React.Component {
+
+  class SocialLinkList extends React.Component{
+
+    render(){
+      <div class="row">
+        <div class="col-1">
+          <img alt="Linkedin" src="{% static 'img/facebook.png' %}" width="24px"></img>
+        </div>
+        <div class="col-10">
+          <input className="form-control" type="email" placeholder="m.bernal@mail.com" id="skype-input"></input>
+        </div>
+        <div class="col-1">
+          <a>
+            <i class="fa fa-close" style="font-size:16px; color:red" />
+          </a>
+        </div>
+      </div>
+    }
+
+  }
+
+  class SocialAvailableLink extends React.Component {
+    onClick(){
+      console.log("clicked")
+    }
+
     render() {
 
       var imgStyle = {
@@ -30,37 +73,42 @@ $(document).ready(function(){
       };
 
       return (
-        <a className="social-icon"  href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title={this.props.title} style={imgStyle}>
-          <img alt="Linkedin" data-placeholder="https://www.linkedin.com/in/id" src={this.props.src} width="24px"></img>
+        <a className="social-icon"  href="javascript:void(0)"
+          data-toggle="tooltip"
+          data-placement="top"
+          title={this.props.title}
+          style={imgStyle}
+          onClick={this.onClick}>
+          <img alt="Linkedin" src={this.props.src} width="24px"></img>
         </a>
       )
     }
   }
 
-  class SocialLinkList extends React.Component {
+  class SocialLinkAvailableList extends React.Component {
 
     render() {
       return (
         <div className="form-group">
-          <SocialLink src="{% static 'img/facebook.png' %}" title="Facebook"/>
-          <SocialLink src="{% static 'img/linkedin.png' %}" title="Linkedin"/>
-          <SocialLink src="{% static 'img/instagram.png' %}" title="Instagram"/>
-          <SocialLink src="{% static 'img/googleplus.png' %}" title="Googleplus"/>
-          <SocialLink src="{% static 'img/youtube.png' %}" title="Youtube"/>
-          <SocialLink src="{% static 'img/behance.png' %}" title="Behance"/>
-          <SocialLink src="{% static 'img/vimeo.png' %}" title="Vimeo"/>
-          <SocialLink src="{% static 'img/pinterest.png' %}" title="Pinterest"/>
-          <SocialLink src="{% static 'img/dribble.png' %}" title="Dribble"/>
-          <SocialLink src="{% static 'img/github.png' %}" title="GitHub"/>
-          <SocialLink src="{% static 'img/stackoverflow.png' %}" title="StackOverflow"/>
-          <SocialLink src="{% static 'img/medium.png' %}" title="Medium"/>
-          <SocialLink src="{% static 'img/flickr.png' %}" title="Flickr"/>
-          <SocialLink src="{% static 'img/wordpress.png' %}" title="Wordpress"/>
+          <SocialAvailableLink src="{% static 'img/facebook.png' %}" title="Facebook"/>
+          <SocialAvailableLink src="{% static 'img/linkedin.png' %}" title="Linkedin"/>
+          <SocialAvailableLink src="{% static 'img/instagram.png' %}" title="Instagram"/>
+          <SocialAvailableLink src="{% static 'img/googleplus.png' %}" title="Googleplus"/>
+          <SocialAvailableLink src="{% static 'img/youtube.png' %}" title="Youtube"/>
+          <SocialAvailableLink src="{% static 'img/behance.png' %}" title="Behance"/>
+          <SocialAvailableLink src="{% static 'img/vimeo.png' %}" title="Vimeo"/>
+          <SocialAvailableLink src="{% static 'img/pinterest.png' %}" title="Pinterest"/>
+          <SocialAvailableLink src="{% static 'img/dribble.png' %}" title="Dribble"/>
+          <SocialAvailableLink src="{% static 'img/github.png' %}" title="GitHub"/>
+          <SocialAvailableLink src="{% static 'img/stackoverflow.png' %}" title="StackOverflow"/>
+          <SocialAvailableLink src="{% static 'img/medium.png' %}" title="Medium"/>
+          <SocialAvailableLink src="{% static 'img/flickr.png' %}" title="Flickr"/>
+          <SocialAvailableLink src="{% static 'img/wordpress.png' %}" title="Wordpress"/>
         </div>
       )
     }
   }
 
   // Render Items
-  ReactDOM.render( <SocialLinkList />, document.getElementById('social_sink'));
+  ReactDOM.render( <SocialLinkAvailableList />, document.getElementById('social_sink'));
 </script>
