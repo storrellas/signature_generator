@@ -1,5 +1,8 @@
 {% load staticfiles %}
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css">
+
 <div class="form-group">
   <label for="">Modelo de la firma</label>
   <div class="row">
@@ -21,7 +24,68 @@
   </div>
 </div>
 
+<hr/>
+<strong>Layout</strong>
+
+<div class="form-group row">
+  <label for="example-text-input" class="col-4 col-form-label">Tamaño de la fuente</label>
+  <div class="col-8">
+    <select class="form-control" id="sel1">
+      <option>10px</option>
+      <option>12px</option>
+      <option>14px</option>      
+    </select>
+  </div>
+</div>
+
+<div class="form-group row">
+  <label for="example-text-input" class="col-4 col-form-label">Color del nombre</label>
+  <div class="col-8">
+    <input id='colorpickername' />
+  </div>
+</div>
+
+<div class="form-group row">
+  <label for="example-text-input" class="col-4 col-form-label">Color del texto</label>
+  <div class="col-8">
+    <input id='colorpickertext' />
+  </div>
+</div>
 
 
+<div class="form-group row">
+  <label for="example-text-input" class="col-4 col-form-label">Fuente</label>
+  <div class="col-8">
+    <select class="form-control" id="sel1">
+      <option>Arial</option>
+      <option>Trebuchet</option>
+      <option>Tahoma</option>
+      <option>Times New Roman</option>
+    </select>
+  </div>
+</div>
 
 <hr/>
+<strong>Imagen</strong>
+
+<div class="form-group row">
+  <label for="example-text-input" class="col-4 col-form-label">Tamaño de imagen</label>
+  <div class="col-8">
+    <select class="form-control" id="sel1">
+      <option>Pequeña (50x50)</option>
+      <option>Mediana (75x75)</option>
+      <option>Pequeña (100x100)</option>
+    </select>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $("#colorpickername").spectrum({
+      preferredFormat: "hex",
+      color: "#f00"
+  });
+  $("#colorpickertext").spectrum({
+    preferredFormat: "hex",
+      color: "#f00"
+  });
+</script>
