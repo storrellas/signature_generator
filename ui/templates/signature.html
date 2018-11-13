@@ -15,8 +15,23 @@
     body {
       min-height: 75rem;
       /*padding-top: 4.5rem;*/
+      background-color: #f3f3f4;
     }
 
+    .box {
+      padding: 0 5px 0 5px;
+    }
+    #nav-tab .active{
+      background-color: #ffffff;
+    }
+
+    #nav-tab :not(.active){
+      background-color: #f3f3f4;
+    }
+    .box .tab-content{
+      background-color: #ffffff;
+            border:1px solid #dee2e6;
+    }
 
   </style>
 
@@ -56,13 +71,13 @@
 
     <div class="container-fluid">
       <div class="row bg-dark">
-          <div class="col-sm-12 text-center">
+          <div class="col-md-12 text-center">
               <a class="navbar-brand" href="#" style="color:white">RD Station | Marketing</a>
           </div>
       </div>
 
       <div class="row" style="background-color:#007bff">
-          <div class="offset-sm-1 col-sm-11">
+          <div class="offset-md-1 col-md-11">
             <img src="{% static 'img/id-card.svg' %}">
               <a class="navbar-brand" href="#" style="color:white">Generador de firma digital profesional</a>
           </div>
@@ -71,51 +86,12 @@
 
   </section>
 
-  <!-- <section id="content">
-
-<div class="container-fluid">
-  <div class="row bg-dark">
-      <div class="col-sm-12 text-center">
-          <a class="navbar-brand" href="#" style="color:white">RD Station | Marketing</a>
-      </div>
-  </div>
-
-  <div class="row" style="background-color:#007bff">
-      <div class="offset-sm-1 col-sm-11">
-        <img src="{% static 'img/id-card.svg' %}">
-          <a class="navbar-brand" href="#" style="color:white">Generador de firma digital profesional</a>
-      </div>
-  </div>
-
-
-  <div class="row" style="padding-top:100px">
-      <div class="col-sm-3"></div>
-      <div class=" col-sm-6">
-        <ul class="nav nav-tabs">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Active</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-        </ul>
-      </div>
-  </div>
-
-</section> -->
-
 <!-- Tabs -->
 <section id="tabs">
   <div class="container">
     <h6 class="section-title h1">Tabs</h6>
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-md-6 box">
         <nav>
           <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
             <a class="nav-item nav-link active" id="nav-general-tab" data-toggle="tab" href="#nav-general" role="tab" aria-controls="nav-general" aria-selected="true">General</a>
@@ -142,10 +118,9 @@
             Design - Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
           </div>
         </div>
-
       </div>
-      <div class="col-sm-6">
-        Please add more content in here
+      <div class="col-md-6 box">
+          Please add more content in here
       </div>
     </div>
   </div>
