@@ -8,8 +8,6 @@
 
 <hr/>
 
-<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-</link>
 
 <div class="form-group">
   <div id="social_available_sink"></div>
@@ -50,16 +48,9 @@ $(document).ready(function(){
     }
 
     handle_delete(index){
-      console.log("Handle delete")
-      console.log(index)
-      console.log(this.state)
-
+      // Remove item from list
       this.state.item_list.splice(index, 1);
-
-      console.log(this.state.item_list)
       this.setState({item_list: this.state.item_list})
-
-
     }
 
     render(){
