@@ -10,10 +10,86 @@
 
 
 <div class="form-group">
-  <div id="social_available_sink"></div>
+  <!-- <div id="social_available_sink"></div> -->
+  <div class="row mt-2">
+    <div class="col-md-12">
+      <a class="social-icon"  href="javascript:void(0)"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="Facebook">
+        <img alt="Facebook" src="{% static 'img/facebook.png' %}" width="24px"></img>
+      </a>
+      <a class="social-icon"  href="javascript:void(0)"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="Linkedin">
+        <img alt="Linkedin" src="{% static 'img/linkedin.png' %}" width="24px"></img>
+      </a>
+      <a class="social-icon"  href="javascript:void(0)"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="Twitter">
+        <img alt="Twitter" src="{% static 'img/twitter.png' %}" width="24px"></img>
+      </a>
+      <a class="social-icon"  href="javascript:void(0)"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="Instagram">
+        <img alt="Instagram" src="{% static 'img/instagram.png' %}" width="24px"></img>
+      </a>
+      <a class="social-icon"  href="javascript:void(0)"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="Youtube">
+        <img alt="Youtube" src="{% static 'img/youtube.png' %}" width="24px"></img>
+      </a>
+      <a class="social-icon"  href="javascript:void(0)"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="GitHub">
+        <img alt="github" src="{% static 'img/github.png' %}" width="24px"></img>
+      </a>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <label for="">Agregar links</label>
+    </div>
+  </div>
+
+
+
+  <div class="row mt-2">
+    <div class="col-1">
+      <img alt="Facebook" src="{% static 'img/facebook.png' %}" width="24px"></img>
+    </div>
+    <div class="col-10">
+      <input class="form-control" type="email" placeholder="Linkedin" id="skype-input">
+    </div>
+    <div class="col-1">
+      <a href="#">
+        <i class="fa fa-close" style="font-size : 16; color: #ff0000"></i>
+      </a>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-1">
+      <img alt="Linkedin" src="{% static 'img/linkedin.png' %}" width="24px"></img>
+    </div>
+    <div class="col-10">
+      <input class="form-control" type="email" placeholder="Linkedin" id="skype-input">
+    </div>
+    <div class="col-1">
+      <a href="#">
+        <i class="fa fa-close" style="font-size : 16; color: #ff0000"></i>
+      </a>
+    </div>
+  </div>
+
+
 </div>
 
-<script type="text/text/javascript">
+<script type="text/javascript">
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
 });
@@ -141,6 +217,6 @@ $(document).ready(function(){
   }
 
   // Render Items
-  ReactDOM.render( <SocialLinkAvailableList />, document.getElementById('social_available_sink'));
+  //ReactDOM.render( <SocialLinkAvailableList />, document.getElementById('social_available_sink'));
   //ReactDOM.render( <SocialLinkList />, document.getElementById('social_sink'));
 </script>
