@@ -1,7 +1,3 @@
-<!-- <p>Para</p>
- <hr/>
-<p>Asunto</p> -->
-
 <style type="text/css">
   .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
@@ -12,17 +8,44 @@
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
   }
+  .disabled-color{
+    color: #8e8e8e
+  }
 </style>
 
 <div class="row mt-2">
-  <div class="col-md-12 noselect" style="color: #8e8e8e">
-      Para: Manuel Bernal
+  <div class="col-md-12 noselect">
+      Para: <span class="disabled-color">Manuel Bernal</span>
   </div>
 </div>
 <hr/>
 <div class="row mt-2">
-  <div class="col-md-12 noselect" style="color: #8e8e8e">
-      Asunto: Buenas noticias
+  <div class="col-md-12 noselect">
+      Asunto: <span class="disabled-color">Buenas noticias</span>
   </div>
 </div>
 <hr/>
+
+<div class="row mt-2">
+  <div class="col-md-12 noselect disabled-color">
+      Hola Ricardo,<br><br>
+      Estoy probando esta nueva app para generar firmas automáticas de correo<br><br>
+      Saludos, <br><br>
+  </div>
+</div>
+<hr/>
+
+<div class="row mt-2">
+  <div class="col-md-12 noselect disabled-color">
+      Nombre<br>
+      Cargo | Departamento <br>
+      Company<br>
+      933473181<br>
+      695634751<br>
+      Skype:sergi.torrellas<br>
+      storrellas@gmail.com<br>
+      www.email.com<br>
+      C/Marina 299<br>
+      <br>
+  </div>
+</div>

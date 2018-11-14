@@ -48,6 +48,57 @@
       color: white;
     }
 
+    .scrollable {
+        height: 1000px; /* or any value */
+        overflow-y: auto;
+    }
+
+/**********************************/
+/* custom inclusion of right, left and below tabs */
+
+.tabs-below > .nav-tabs {
+  border-bottom: 0;
+}
+
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+  display: none;
+}
+
+.tab-content > .active,
+.pill-content > .active {
+  display: block;
+}
+
+.tabs-bottom > .nav-tabs {
+  border-top: 1px solid #ddd;
+}
+
+.tabs-bottom > .nav-tabs > li {
+  margin-top: -1px;
+  margin-bottom: 0;
+}
+
+.tabs-bottom > .nav-tabs > li > a {
+  -webkit-border-radius: 0 0 4px 4px;
+     -moz-border-radius: 0 0 4px 4px;
+          border-radius: 0 0 4px 4px;
+}
+
+.tabs-below > .nav-tabs > li > a:hover,
+.tabs-below > .nav-tabs > li > a:focus {
+  border-top-color: #ddd;
+  border-bottom-color: transparent;
+}
+
+.tabs-bottom > .nav-tabs > .active > a,
+.tabs-bottom > .nav-tabs > .active > a:hover,
+.tabs-bottom > .nav-tabs > .active > a:focus {
+  border-color: transparent #ddd #ddd #ddd;
+}
+
+/*************************/
+
   </style>
 
 </head>
@@ -73,7 +124,7 @@
   </section>
 
 
-  <section id="content">
+  <section id="content"  class="scrollable">
     <div class="container">
       <h6 class="section-title h1">Tabs</h6>
       <div class="row">
@@ -127,19 +178,37 @@
                Previsualización de tu firma email
             </div>
           </div>
+
           <div class="row">
             <div class="col-md-12" style="min-height:200px">
-                {% include "tabs/preview.html" %}
+              <div class="tabbable tabs-bottom">
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="home" style="min-height:700px">
+                    {% include "tabs/preview.html" %}
+                    </div>
+                  <div class="tab-pane" id="about"  style="min-height:700px">
+                    Please add content here
+                  </div>
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#home" data-toggle="tab">Preview</a></li>
+                  <li><a href="#about" data-toggle="tab">HTML</a></li>
+                </ul>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
   </section>
 
 
+
+
+
+
     <!-- Footer -->
-    <footer class="page-footer font-small blue pt-4 bg-dark fixed-bottom">
+    <footer class="page-footer font-small blue pt-1 bg-dark fixed-bottom">
       <!-- Copyright -->
       <div class="footer-copyright text-center py-3 color-white">© 2018 Copyright:
         <a href="https://clientify.net">Clientify.net</a>
