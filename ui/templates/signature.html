@@ -53,51 +53,10 @@
         overflow-y: auto;
     }
 
-/**********************************/
-/* custom inclusion of right, left and below tabs */
+    .tabs-preview .nav-tabs li a{
+      padding:10px 10px 0 10px
+    }
 
-.tabs-below > .nav-tabs {
-  border-bottom: 0;
-}
-
-.tab-content > .tab-pane,
-.pill-content > .pill-pane {
-  display: none;
-}
-
-.tab-content > .active,
-.pill-content > .active {
-  display: block;
-}
-
-.tabs-bottom > .nav-tabs {
-  border-top: 1px solid #ddd;
-}
-
-.tabs-bottom > .nav-tabs > li {
-  margin-top: -1px;
-  margin-bottom: 0;
-}
-
-.tabs-bottom > .nav-tabs > li > a {
-  -webkit-border-radius: 0 0 4px 4px;
-     -moz-border-radius: 0 0 4px 4px;
-          border-radius: 0 0 4px 4px;
-}
-
-.tabs-below > .nav-tabs > li > a:hover,
-.tabs-below > .nav-tabs > li > a:focus {
-  border-top-color: #ddd;
-  border-bottom-color: transparent;
-}
-
-.tabs-bottom > .nav-tabs > .active > a,
-.tabs-bottom > .nav-tabs > .active > a:hover,
-.tabs-bottom > .nav-tabs > .active > a:focus {
-  border-color: transparent #ddd #ddd #ddd;
-}
-
-/*************************/
 
   </style>
 
@@ -181,19 +140,24 @@
 
           <div class="row">
             <div class="col-md-12" style="min-height:200px">
-              <div class="tabbable tabs-bottom">
-                  <div class="tab-content">
-                    <div class="tab-pane active" id="home" style="min-height:700px">
+
+              <div class="tabs-preview tabs-bottom">
+                <div class="tab-content">
+                  <div class="tab-pane active" id="preview" style="min-height:700px">
                     {% include "tabs/preview.html" %}
-                    </div>
-                  <div class="tab-pane" id="about"  style="min-height:700px">
-                    Please add content here
                   </div>
-                <ul class="nav nav-tabs">
-                  <li class="active"><a href="#home" data-toggle="tab">Preview</a></li>
-                  <li><a href="#about" data-toggle="tab">HTML</a></li>
-                </ul>
-              </div>
+                  <div class="tab-pane" id="html"  style="min-height:700px">
+                    <div></div>
+                  </div>
+
+                  <ul class="nav nav-tabs">
+                    <li class="active"><a href="#preview" data-toggle="tab">Preview</a></li>
+                    <li><a href="#html" data-toggle="tab">HTML</a></li>
+                  </ul>
+
+                </div>
+
+
             </div>
           </div>
 
@@ -217,4 +181,14 @@
     <!-- Footer -->
 
 </body>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".tabs-preview").click(function(){
+      var html = $("#preview").html()
+      $("#html").children(":first").text(html)
+    })
+  })
+</script>
+
 </html>
