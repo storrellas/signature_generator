@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <style type="text/css">
   .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
@@ -44,5 +46,14 @@
       <div><a id="email-preview" href="mailto:mail@mail.com" target="_top" class="colortext">m.bernal@mail.com</a></div>
       <div><a id="website-preview" href="www.google.com" target="_top" class="colortext">www.google.com</a></div>
       <div id="address-preview" class="colortext">C/ Calle 100</div>
+
+      <div id="social">
+        <a class="delete" href="#" id="delete_link">
+          <img alt="Facebook" src="{% static 'img/facebook.png' %}" width="24px"></img>
+        </a>
+        <a class="delete" href="#" id="delete_link">
+          <img alt="Facebook" src="{% static 'img/facebook.png' %}" width="24px"></img>
+        </a>
+      </div>
   </div>
 </div>

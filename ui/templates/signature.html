@@ -219,6 +219,27 @@
     $('#website-preview').text(website)
 
     $("#address-preview").text(  $("#address-input").val() )
+
+
+    $("#social").remove()    
+    $('.social_link_selected .signature-field').each(function(index, element){
+      //console.log(element)
+      //console.log(element.attr('id'))
+      console.log(this.id)
+      console.log( $(this).val().length )
+      console.log( $(this).parent().prev().children(":first").attr('src') )
+      if( $(this).val().length > 0 ){
+        var src =  $(this).parent().prev().children(":first").attr('src')
+        var html = "<a class='delete' href='" + $(this).val() + "'>" +
+                      "<img alt='Facebook' src='" + src + "' width='24px' style='margin-left : 5px'></img>" +
+                    "</a>";
+        $("#social").append(html)
+          // console.log("++++++++++++++++++")
+          // console.log(html)
+          // console.log("++++++++++++++++++")
+      }
+    })
+
   }
 
   function update_design(){
@@ -228,12 +249,11 @@
 
     $('.colorname').css("color", $('#colorpickername').val() );
     $('.colortext').css("color", $('#colorpickertext').val() );
+  }
 
-
-    // console.log("update_design - 1")
-    // console.log(  )
-    // console.log("update_design - 2")
-    // console.log( $('#colorpickertext').val() )
+  function rebind_update_preview(){
+    $('.signature-field').unbind('input');
+    $('.signature-field').on('input', update_preview);
   }
 
   $(document).ready(function(){
@@ -249,7 +269,7 @@
     update_design()
     // Update preview
     $('.signature-field').on('input', update_preview);
-    $('.signature-design').change(update_design);
+    $('.signature-design').on(update_design);
   })
 </script>
 
