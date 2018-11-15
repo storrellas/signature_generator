@@ -195,6 +195,12 @@
       // Fill contents
       $("#name-preview").text(  $("#name-input").val() )
       $("#position-preview").text(  $("#position-input").val() )
+      var department = $("#department-input").val()
+      if( department.length > 0 ){
+        $("#department-preview").text( " | " +department )
+      }else{
+        $("#skype-preview").text("")
+      }
       $("#department-preview").text( " | " + $("#department-input").val() )
       $("#company-preview").text(  $("#company-input").val() )
       $("#phone-preview").text(  $("#phone-input").val() )
@@ -203,7 +209,8 @@
       var skype = $("#skype-input").val()
       if( skype.length > 0 ){
         $("#skype-preview").text("Skype:" + skype  )
-
+      }else{
+        $("#skype-preview").text("")
       }
 
 
