@@ -8,9 +8,6 @@
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
   }
-  .disabled-color{
-    color: #8e8e8e
-  }
 </style>
 
 <div class="row mt-2">
@@ -36,16 +33,16 @@
 </div>
 
 <div class="row mt-4">
-  <div class="col-md-12 noselect disabled-color">
+  <div class="col-md-12 noselect disabled-color signature-preview">
       <div>----</div>
-      <div id="name-preview">Nombre</div>
-      <div><span id="position-preview">Cargo</span><span id="department-preview"> | Departamento</span></div>
-      <div id="company-preview">Company</div>
-      <div id="phone-preview">+34.55.55.55.55</div>
-      <div id="cell-preview">+34.55.55.55.55</div>
-      <div><span id="skype-preview">m.bernal</span></div>
-      <div><a id="email-preview" href="mailto:mail@mail.com" target="_top">m.bernal@mail.com</a></div>
-      <div><a id="website-preview" href="www.google.com" target="_top">www.google.com</a></div>
-      <div id="address-preview">C/ Calle 100</div>
+      <div id="name-preview" class="colorname">Nombre</div>
+      <div class="colortext"><span id="position-preview">Cargo</span><span id="department-preview"> | Departamento</span></div>
+      <div id="company-preview" class="colortext">Company</div>
+      <div id="phone-preview" class="colortext">+34.55.55.55.55</div>
+      <div id="cell-preview" class="colortext">+34.55.55.55.55</div>
+      <div><span id="skype-preview" class="colortext">m.bernal</span></div>
+      <div><a id="email-preview" href="mailto:mail@mail.com" target="_top" class="colortext">m.bernal@mail.com</a></div>
+      <div><a id="website-preview" href="www.google.com" target="_top" class="colortext">www.google.com</a></div>
+      <div id="address-preview" class="colortext">C/ Calle 100</div>
   </div>
 </div>

@@ -183,6 +183,59 @@
 </body>
 
 <script type="text/javascript">
+
+
+  function update_preview() {
+    console.log("Update preview")
+
+    // Fill contents
+    $("#name-preview").text(  $("#name-input").val() )
+    $("#position-preview").text(  $("#position-input").val() )
+    var department = $("#department-input").val()
+    if( department.length > 0 ){
+      $("#department-preview").text( " | " +department )
+    }else{
+      $("#skype-preview").text("")
+    }
+    $("#department-preview").text( " | " + $("#department-input").val() )
+    $("#company-preview").text(  $("#company-input").val() )
+    $("#phone-preview").text(  $("#phone-input").val() )
+    $("#cell-preview").text(  $("#cell-input").val() )
+
+    var skype = $("#skype-input").val()
+    if( skype.length > 0 ){
+      $("#skype-preview").text("Skype:" + skype  )
+    }else{
+      $("#skype-preview").text("")
+    }
+
+
+    var mail = $("#email-input").val()
+    $('#email-preview').attr('href', "mailto:"+mail)
+    $('#email-preview').text(mail)
+
+    var website = $("#website-input").val()
+    $('#website-preview').attr('href', website)
+    $('#website-preview').text(website)
+
+    $("#address-preview").text(  $("#address-input").val() )
+  }
+
+  function update_design(){
+
+    $('.signature-preview').css("font-size", $("#font-size-input").val() );
+    $('.signature-preview').css("font-family", $("#font-family-input").val() );
+
+    $('.colorname').css("color", $('#colorpickername').val() );
+    $('.colortext').css("color", $('#colorpickertext').val() );
+
+
+    // console.log("update_design - 1")
+    // console.log(  )
+    // console.log("update_design - 2")
+    // console.log( $('#colorpickertext').val() )
+  }
+
   $(document).ready(function(){
     // Dump HTML content
     $(".tabs-preview").click(function(){
@@ -190,40 +243,13 @@
       $("#html").children(":first").text(html)
     })
 
+    // Default values
+    $("#colorpickername").spectrum("set", "#8e8e8e")
+    $("#colorpickertext").spectrum("set", "#8e8e8e")
+    update_design()
     // Update preview
-    $('.signature-field').on('input', function() {
-      // Fill contents
-      $("#name-preview").text(  $("#name-input").val() )
-      $("#position-preview").text(  $("#position-input").val() )
-      var department = $("#department-input").val()
-      if( department.length > 0 ){
-        $("#department-preview").text( " | " +department )
-      }else{
-        $("#skype-preview").text("")
-      }
-      $("#department-preview").text( " | " + $("#department-input").val() )
-      $("#company-preview").text(  $("#company-input").val() )
-      $("#phone-preview").text(  $("#phone-input").val() )
-      $("#cell-preview").text(  $("#cell-input").val() )
-
-      var skype = $("#skype-input").val()
-      if( skype.length > 0 ){
-        $("#skype-preview").text("Skype:" + skype  )
-      }else{
-        $("#skype-preview").text("")
-      }
-
-
-      var mail = $("#email-input").val()
-      $('#email-preview').attr('href', "mailto:"+mail)
-      $('#email-preview').text(mail)
-
-      var website = $("#website-input").val()
-      $('#website-preview').attr('href', website)
-      $('#website-preview').text(website)
-
-      $("#address-preview").text(  $("#address-input").val() )
-    });
+    $('.signature-field').on('input', update_preview);
+    $('.signature-design').change(update_design);
   })
 </script>
 
