@@ -195,7 +195,7 @@
     if( department.length > 0 ){
       $("#department-preview").text( " | " +department )
     }else{
-      $("#skype-preview").text("")
+      $("#department-preview").text("")
     }
     $("#department-preview").text( " | " + $("#department-input").val() )
     $("#company-preview").text(  $("#company-input").val() )
@@ -220,26 +220,6 @@
 
     $("#address-preview").text(  $("#address-input").val() )
 
-
-    $("#social").remove()    
-    $('.social_link_selected .signature-field').each(function(index, element){
-      //console.log(element)
-      //console.log(element.attr('id'))
-      console.log(this.id)
-      console.log( $(this).val().length )
-      console.log( $(this).parent().prev().children(":first").attr('src') )
-      if( $(this).val().length > 0 ){
-        var src =  $(this).parent().prev().children(":first").attr('src')
-        var html = "<a class='delete' href='" + $(this).val() + "'>" +
-                      "<img alt='Facebook' src='" + src + "' width='24px' style='margin-left : 5px'></img>" +
-                    "</a>";
-        $("#social").append(html)
-          // console.log("++++++++++++++++++")
-          // console.log(html)
-          // console.log("++++++++++++++++++")
-      }
-    })
-
   }
 
   function update_design(){
@@ -251,10 +231,6 @@
     $('.colortext').css("color", $('#colorpickertext').val() );
   }
 
-  function rebind_update_preview(){
-    $('.signature-field').unbind('input');
-    $('.signature-field').on('input', update_preview);
-  }
 
   $(document).ready(function(){
     // Dump HTML content
