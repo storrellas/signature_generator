@@ -197,7 +197,6 @@
     }else{
       $("#department-preview").text("")
     }
-    $("#department-preview").text( " | " + $("#department-input").val() )
     $("#company-preview").text(  $("#company-input").val() )
     $("#phone-preview").text(  $("#phone-input").val() )
     $("#cell-preview").text(  $("#cell-input").val() )
@@ -219,6 +218,41 @@
     $('#website-preview').text(website)
 
     $("#address-preview").text(  $("#address-input").val() )
+
+    // Social
+    var item = $("#facebook-input").val()
+    if( item.length > 0 ){
+      $("#facebook-preview").show()
+      $("#facebook-preview").attr('href', item)
+    }else{
+      $("#facebook-preview").hide()
+    }
+    item = $("#linkedin-input").val()
+    if( item.length > 0 ){
+      $("#linkedin-preview").show()
+      $("#linkedin-preview").attr('href', item)
+    }else{
+      $("#linkedin-preview").hide()
+    }
+    item = $("#twitter-input").val()
+    if( item.length > 0 ){
+      $("#twitter-preview").show()
+      $("#twitter-preview").attr('href', item)
+    }else{
+      $("#twitter-preview").hide()
+    }
+    item = $("#instagram-input").val()
+    if( item.length > 0 ){
+      $("#instagram-preview").show()
+      $("#instagram-preview").attr('href', item)
+    }else{
+      $("#instagram-preview").hide()
+    }
+
+    // $("#facebook-preview").attr('href', $("#facebook-input").val())
+    // $("#linkedin-preview").attr('href', $("#linkedin-input").val())
+    // $("#twitter-preview").attr('href', $("#twitter-input").val())
+    // $("#instagram-preview").attr('href', $("#instagram-input").val())
 
   }
 
