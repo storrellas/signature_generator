@@ -141,7 +141,7 @@
               {% include "tabs/general.html" %}
             </div>
           </div>
-          <!-- <div class="tab-pane fade" id="nav-contacts" role="tabpanel" aria-labelledby="nav-contacts-tab">
+          <div class="tab-pane fade" id="nav-contacts" role="tabpanel" aria-labelledby="nav-contacts-tab">
             <div class="col-md-12">
               {% include "tabs/contacts.html" %}
             </div>
@@ -155,7 +155,7 @@
             <div class="col-md-12">
               {% include "tabs/social.html" %}
             </div>
-          </div> -->
+          </div>
           <div class="tab-pane fade" id="nav-design" role="tabpanel" aria-labelledby="nav-design-tab">
             <div class="col-md-12">
               {% include "tabs/design.html" %}
@@ -257,12 +257,24 @@
   function update_design(){
 
 
-
     $('.signature-preview').css("font-size", $("#font-size-input").val() );
     $('.signature-preview').css("font-family", $("#font-family-input").val() );
 
     $('.colorname').css("color", $('#colorpickername').val() );
     $('.colortext').css("color", $('#colorpickertext').val() );
+
+    console.log("update_design")
+    console.log($("#image-size-input").val())
+
+    switch( $("#image-size-input").val() ){
+      case 'small': $("#image-preview").width(50)
+        break;
+      case 'medium': $("#image-preview").width(75)
+        break;
+      case 'large': $("#image-preview").width(100)
+        break;
+
+    }
   }
 
 
