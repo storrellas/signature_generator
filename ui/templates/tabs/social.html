@@ -1,70 +1,106 @@
 {% load staticfiles %}
 
-<!-- <div class="form-group">
-  <label for="exampleInputEmail1">Caption</label>
-  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Síguenos">
-  <small id="emailHelp" class="form-text text-muted"></small>
-</div>
 
-<hr/> -->
-
-
-<div class="form-group">
-  <!-- <div id="social_available_sink"></div> -->
-  <div class="row mt-2">
-    <div class="col-md-12">
-      <a class="social-icon facebook"  href="javascript:void(0)"
-        data-toggle="tooltip"
-        data-placement="top"
-        data-item="Facebook"
-        title="Facebook">
-        <img alt="Facebook" src="{% static 'img/facebook.png' %}" width="24px"></img>
-      </a>
-      <a class="social-icon linkedin"  href="javascript:void(0)"
-        data-toggle="tooltip"
-        data-placement="top"
-        data-item="Linkedin"
-        title="Linkedin">
-        <img alt="Linkedin" src="{% static 'img/linkedin.png' %}" width="24px"></img>
-      </a>
-      <a class="social-icon twitter"  href="javascript:void(0)"
-        data-toggle="tooltip"
-        data-placement="top"
-        data-item="Twitter"
-        title="Twitter">
-        <img alt="Twitter" src="{% static 'img/twitter.png' %}" width="24px"></img>
-      </a>
-      <a class="social-icon instagram"  href="javascript:void(0)"
-        data-toggle="tooltip"
-        data-placement="top"
-        data-item="Instagram"
-        title="Instagram">
-        <img alt="Instagram" src="{% static 'img/instagram.png' %}" width="24px"></img>
-      </a>
-      <a class="social-icon youtube"  href="javascript:void(0)"
-        data-toggle="tooltip"
-        data-placement="top"
-        data-item="YouTube"
-        title="YouTube">
-        <img alt="Youtube" src="{% static 'img/youtube.png' %}" width="24px"></img>
-      </a>
-      <a class="social-icon github"  href="javascript:void(0)"
-        data-toggle="tooltip"
-        data-placement="top"
-        data-item="GitHub"
-        title="GitHub">
-        <img alt="github" src="{% static 'img/github.png' %}" width="24px"></img>
-      </a>
-    </div>
-  </div>
-  <div class="row mt-4">
+  <div class="row">
     <div class="col-md-12">
       <label for="">Agregar links</label>
     </div>
   </div>
 
+  <div class="form-group row">
+      <div class="col-md-1">
+        <img alt="Facebook" src="{% static 'img/facebook.png' %}" width="24px"></img>
+      </div>
+      <div class="col-md-11">
+        <input class="form-control signature-field" type="text" placeholder="Facebook" id="facebook">
+      </div>
+  </div>
+  <div class="form-group row">
+      <div class="col-md-1">
+        <img alt="Linkedin" src="{% static 'img/linkedin.png' %}" width="24px"></img>
+      </div>
+      <div class="col-md-11">
+        <input class="form-control signature-field" type="text" placeholder="Linkedin" id="linkedin">
+      </div>
+  </div>
+  <div class="form-group row">
+      <div class="col-md-1">
+        <img alt="Twitter" src="{% static 'img/twitter.png' %}" width="24px"></img>
+      </div>
+      <div class="col-md-11">
+        <input class="form-control signature-field" type="text" placeholder="Twitter" id="twitter">
+      </div>
+  </div>
+  <div class="form-group row">
+      <div class="col-md-1">
+        <img alt="Instagram" src="{% static 'img/instagram.png' %}" width="24px"></img>
+      </div>
+      <div class="col-md-11">
+        <input class="form-control signature-field" type="text" placeholder="Instagram" id="instagram">
+      </div>
+  </div>
+
+
+  <!-- <div class="form-group">
+    <label for="exampleInputEmail1">Caption</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Síguenos">
+    <small id="emailHelp" class="form-text text-muted"></small>
+  </div>
+
+  <hr/> -->
+
+
+  <!-- <div class="form-group">
+    <div id="social_available_sink"></div>
+    <div class="row mt-2">
+      <div class="col-md-12">
+        <a class="social-icon facebook"  href="javascript:void(0)"
+          data-toggle="tooltip"
+          data-placement="top"
+          data-item="Facebook"
+          title="Facebook">
+          <img alt="Facebook" src="{% static 'img/facebook.png' %}" width="24px"></img>
+        </a>
+        <a class="social-icon linkedin"  href="javascript:void(0)"
+          data-toggle="tooltip"
+          data-placement="top"
+          data-item="Linkedin"
+          title="Linkedin">
+          <img alt="Linkedin" src="{% static 'img/linkedin.png' %}" width="24px"></img>
+        </a>
+        <a class="social-icon twitter"  href="javascript:void(0)"
+          data-toggle="tooltip"
+          data-placement="top"
+          data-item="Twitter"
+          title="Twitter">
+          <img alt="Twitter" src="{% static 'img/twitter.png' %}" width="24px"></img>
+        </a>
+        <a class="social-icon instagram"  href="javascript:void(0)"
+          data-toggle="tooltip"
+          data-placement="top"
+          data-item="Instagram"
+          title="Instagram">
+          <img alt="Instagram" src="{% static 'img/instagram.png' %}" width="24px"></img>
+        </a>
+        <a class="social-icon youtube"  href="javascript:void(0)"
+          data-toggle="tooltip"
+          data-placement="top"
+          data-item="YouTube"
+          title="YouTube">
+          <img alt="Youtube" src="{% static 'img/youtube.png' %}" width="24px"></img>
+        </a>
+        <a class="social-icon github"  href="javascript:void(0)"
+          data-toggle="tooltip"
+          data-placement="top"
+          data-item="GitHub"
+          title="GitHub">
+          <img alt="github" src="{% static 'img/github.png' %}" width="24px"></img>
+        </a>
+      </div>
+    </div> -->
+
   <!-- List of social Selected Links -->
-  <div class="social_link_selected">
+  <!-- <div class="social_link_selected">
     <div class="row mt-2">
       <div class="col-1">
         <img alt="Facebook" src="{% static 'img/facebook.png' %}" width="24px"></img>
@@ -92,7 +128,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <script type="text/javascript">
 
