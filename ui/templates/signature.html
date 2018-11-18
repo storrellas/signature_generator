@@ -94,7 +94,7 @@
             <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
               <a class="nav-item nav-link active" id="nav-general-tab" data-toggle="tab" href="#nav-general" role="tab" aria-controls="nav-general" aria-selected="true">General</a>
               <a class="nav-item nav-link" id="nav-contacts-tab" data-toggle="tab" href="#nav-contacts" role="tab" aria-controls="nav-contacts" aria-selected="false">Contactos</a>
-              <a class="nav-item nav-link" id="nav-images-tab" data-toggle="tab" href="#nav-images" role="tab" aria-controls="nav-images" aria-selected="false">Imagenes</a>
+              <a class="nav-item nav-link" id="nav-image-tab" data-toggle="tab" href="#nav-image" role="tab" aria-controls="nav-images" aria-selected="false">Imagen</a>
               <a class="nav-item nav-link" id="nav-social-tab" data-toggle="tab" href="#nav-social" role="tab" aria-controls="nav-social" aria-selected="false">Social</a>
               <a class="nav-item nav-link" id="nav-design-tab" data-toggle="tab" href="#nav-design" role="tab" aria-controls="nav-design" aria-selected="false">Diseño</a>
             </div>
@@ -112,9 +112,9 @@
                 {% include "tabs/contacts.html" %}
               </div>
             </div>
-            <div class="tab-pane fade" id="nav-images" role="tabpanel" aria-labelledby="nav-images-tab">
+            <div class="tab-pane fade" id="nav-image" role="tabpanel" aria-labelledby="nav-image-tab">
               <div class="col-md-12">
-                {% include "tabs/images.html" %}
+                {% include "tabs/image.html" %}
               </div>
             </div>
             <div class="tab-pane fade" id="nav-social" role="tabpanel" aria-labelledby="nav-social-tab">
@@ -249,10 +249,7 @@
       $("#instagram-preview").hide()
     }
 
-    // $("#facebook-preview").attr('href', $("#facebook-input").val())
-    // $("#linkedin-preview").attr('href', $("#linkedin-input").val())
-    // $("#twitter-preview").attr('href', $("#twitter-input").val())
-    // $("#instagram-preview").attr('href', $("#instagram-input").val())
+    $("#image-preview").attr("src", $("#image-input").val());
 
   }
 
