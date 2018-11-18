@@ -3,7 +3,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css">
 
-<div class="form-group">
+<!-- <div class="form-group">
   <label for="">Modelo de la firma</label>
   <div class="row">
     <div class="col-md-4 text-center">
@@ -23,17 +23,18 @@
     </div>
   </div>
 </div>
-
 <hr/>
-<strong>Layout</strong>
+-->
+
+<strong>Formato</strong>
 
 <div class="form-group row">
   <label for="" class="col-4 col-form-label">Tamaño de la fuente</label>
   <div class="col-8">
     <select class="form-control signature-design" id="font-size-input">
-      <option>14px</option>
-      <option selected>16px</option>
-      <option>18px</option>
+      <option value="14px">Pequeña</option>
+      <option selected value="16px">Mediana</option>
+      <option value="18px">Grande</option>
     </select>
   </div>
 </div>
@@ -86,7 +87,7 @@
       showPaletteOnly: true,
       togglePaletteOnly: true,
       togglePaletteMoreText: 'more',
-      togglePaletteLessText: 'less',      
+      togglePaletteLessText: 'less',
       palette: [
           ["#000","#444","#666","#999","#ccc","#eee","#f3f3f3","#fff"],
           ["#f00","#f90","#ff0","#0f0","#0ff","#00f","#90f","#f0f"],
