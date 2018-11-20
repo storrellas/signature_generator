@@ -258,7 +258,9 @@
       $("#instagram-preview").hide()
     }
 
-    $("#image-preview").attr("src", $("#image-input").val());
+    $("#image-preview-top").attr("src", $("#image-input").val());
+    $("#image-preview-left").attr("src", $("#image-input").val());
+    $("#image-preview-right").attr("src", $("#image-input").val());
 
   }
 
@@ -277,6 +279,20 @@
       case 'medium': $("#image-preview").width(75)
         break;
       case 'large': $("#image-preview").width(100)
+        break;
+
+    }
+
+
+    $("#image-preview-top").hide();
+    $("#image-preview-left").hide();
+    $("#image-preview-right").hide();
+    switch( $("#image-layout-input").val() ){
+      case 'left': $("#image-preview-left").show();
+        break;
+      case 'top': $("#image-preview-top").show();
+        break;
+      case 'right': $("#image-preview-right").show();
         break;
 
     }
