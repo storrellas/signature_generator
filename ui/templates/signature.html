@@ -12,8 +12,6 @@
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
   <!-- JQuery -->
-  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
-
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
@@ -107,7 +105,17 @@
                     {% include "tabs/preview.html" %}
                   </div>
                   <div class="tab-pane" id="html"  style="min-height:700px">
-                    <div></div>
+                    <!-- <div></div> -->
+                    <div class="row">
+                      <div  id="html-preview" class="col-md-11">
+                        adsafsdfsd
+                      </div>
+                      <div class="col-md-1" style="padding:0">
+                        <button class="clipboard-button">
+                            <i class="far fa-clipboard"></i>
+                        </button>
+                      </div>
+                    </div>
                   </div>
 
                   <ul class="nav nav-tabs">
@@ -278,8 +286,9 @@
   $(document).ready(function(){
     // Dump HTML content
     $(".tabs-preview").click(function(){
-      var html = $("#preview").html()
-      $("#html").children(":first").text(html)
+      var html = $("#signature-preview").html()
+      $("#html-preview").text(html)
+
       $("#clipboard-preview").val(html)
     })
 
@@ -293,43 +302,21 @@
 
     $('.clipboard-button').click(function(){
 
-      console.log("Clicked button")
-
-      /* Get the text field */
-      var copyText = document.getElementById("clipboard-preview");
-
-      /* Select the text field */
-      copyText.select();
-
-      /* Copy the text inside the text field */
+      var $temp = $("<input>");
+      $("body").append($temp);
+      $temp.val($("#html-preview").text()).select();
       document.execCommand("copy");
+      $temp.remove();
 
-      /* Alert the copied text */
-      alert("Copied the text: " + copyText.value);
-
-
-/*
-      var t = document.getElementById('preview')
-      //t.innerHTML = text
-      t.select()
-      try {
-        var successful = document.execCommand('copy')
-        var msg = successful ? 'successfully' : 'unsuccessfully'
-        console.log('text coppied ' + msg)
-      } catch (err) {
-        console.log('Unable to copy text')
-      }
-      t.innerHTML = ''
-/**/
     })
 
   })
 </script>
 
-<input value="" id="clipboard-preview" type="hidden">
+<!-- <input value="" id="clipboard-preview" type="hidden"> -->
 <!-- Trigger -->
-<button class="clipboard-button">
+<!-- <button class="clipboard-button">
     <i class="far fa-clipboard"></i>
-</button>
+</button> -->
 
 </html>
