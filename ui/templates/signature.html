@@ -263,9 +263,6 @@
     $('.colorname').css("color", $('#colorpickername').val() );
     $('.colortext').css("color", $('#colorpickertext').val() );
 
-    console.log("update_design")
-    console.log($("#image-size-input").val())
-
     switch( $("#image-size-input").val() ){
       case 'small': $("#image-preview").width(50)
         break;
@@ -283,6 +280,7 @@
     $(".tabs-preview").click(function(){
       var html = $("#preview").html()
       $("#html").children(":first").text(html)
+      $("#clipboard-preview").val(html)
     })
 
     // Default values
@@ -292,7 +290,46 @@
     // Update preview
     $('.signature-field').on('input', update_preview);
     $('.signature-design').on('change', update_design);
+
+    $('.clipboard-button').click(function(){
+
+      console.log("Clicked button")
+
+      /* Get the text field */
+      var copyText = document.getElementById("clipboard-preview");
+
+      /* Select the text field */
+      copyText.select();
+
+      /* Copy the text inside the text field */
+      document.execCommand("copy");
+
+      /* Alert the copied text */
+      alert("Copied the text: " + copyText.value);
+
+
+/*
+      var t = document.getElementById('preview')
+      //t.innerHTML = text
+      t.select()
+      try {
+        var successful = document.execCommand('copy')
+        var msg = successful ? 'successfully' : 'unsuccessfully'
+        console.log('text coppied ' + msg)
+      } catch (err) {
+        console.log('Unable to copy text')
+      }
+      t.innerHTML = ''
+/**/
+    })
+
   })
 </script>
+
+<input value="" id="clipboard-preview" type="hidden">
+<!-- Trigger -->
+<button class="clipboard-button">
+    <i class="far fa-clipboard"></i>
+</button>
 
 </html>
