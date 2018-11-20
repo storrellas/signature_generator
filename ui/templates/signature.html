@@ -216,12 +216,20 @@
 
 
     var mail = $("#email-input").val()
-    $('#email-preview').attr('href', "mailto:"+mail)
-    $('#email-preview').text(mail)
+    if( mail.length > 0 ){
+      $('#email-preview').attr('href', "mailto:"+mail)
+      $('#email-preview').text(" | " + mail)
+    }else{
+      $("#email-preview").text("")
+    }
 
     var website = $("#website-input").val()
-    $('#website-preview').attr('href', website)
-    $('#website-preview').text(website)
+    if( website.length > 0 ){
+      $('#website-preview').attr('href', website)
+      $('#website-preview').text(" | " + website)
+    }else{
+      $("#website-preview").text("")
+    }
 
     $("#address-preview").text(  $("#address-input").val() )
 
