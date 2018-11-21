@@ -209,16 +209,16 @@
 
     var skype = $("#skype-input").val()
     if( skype.length > 0 ){
-      $("#skype-preview").text("Skype:" + skype  )
+      $("#skype-preview").text("S:" + skype  )
     }else{
       $("#skype-preview").text("")
     }
 
 
-    var mail = $("#email-input").val()
-    if( mail.length > 0 ){
-      $('#email-preview').attr('href', "mailto:"+mail)
-      $('#email-preview').text(" | " + mail)
+    var email = $("#email-input").val()
+    if( email.length > 0 ){
+      $('#email-preview').attr('href', "mailto:"+email)
+      $('#email-preview').text(email)
     }else{
       $("#email-preview").text("")
     }
@@ -226,7 +226,7 @@
     var website = $("#website-input").val()
     if( website.length > 0 ){
       $('#website-preview').attr('href', website)
-      $('#website-preview').text(" | " + website)
+      $('#website-preview').text(website)
     }else{
       $("#website-preview").text("")
     }
@@ -278,28 +278,43 @@
     $('.colorname').css("color", $('#colorpickername').val() );
     $('.colortext').css("color", $('#colorpickertext').val() );
 
+    var width = 200;
     switch( $("#image-size-input").val() ){
-      case 'small': $("#image-preview").width(50)
+      case 'small': width = 150;
         break;
-      case 'medium': $("#image-preview").width(75)
+      case 'medium': width = 200;
         break;
-      case 'large': $("#image-preview").width(100)
+      case 'large': width = 250;
         break;
-
     }
+    $("#image-preview-left").width(width)
+    $("#image-preview-top").width(width)
+    $("#image-preview-right").width(width)
 
 
     $("#image-preview-top").hide();
+    $("#image-preview-top").parent().css('padding', '');
     $("#image-preview-left").hide();
+    $("#image-preview-left").parent().css('padding', '');
     $("#image-preview-right").hide();
+    $("#image-preview-right").parent().css('padding', '');
     switch( $("#image-layout-input").val() ){
       case 'left': $("#image-preview-left").show();
-        break;
-      case 'top': $("#image-preview-top").show();
-        break;
-      case 'right': $("#image-preview-right").show();
+                   $("#image-preview-left").parent().css('padding', '0 10px 0 0');
+                   $("#image-preview-top").parent().css('padding', '0 0 0 10px');
+                   $("#image-preview-top").parent().css('border-width', '0 0 0 5px');
         break;
 
+      case 'top': $("#image-preview-top").show();
+                   $("#image-preview-left").parent().css('padding', '0 0 0 0');
+                   $("#image-preview-top").parent().css('padding', '0 0 0 0');
+                   $("#image-preview-top").parent().css('border-width', '0 0 0 0');
+        break;
+      case 'right': $("#image-preview-right").show();
+                   $("#image-preview-right").parent().css('padding', '0 0 0 10px');
+                   $("#image-preview-top").parent().css('padding', '0 10px 0 0');
+                   $("#image-preview-top").parent().css('border-width', '0 5px 0 0');
+        break;
     }
   }
 
@@ -314,7 +329,7 @@
     })
 
     // Default values
-    $("#colorpickername").spectrum("set", "#8e8e8e")
+    $("#colorpickername").spectrum("set", "#666666")
     $("#colorpickertext").spectrum("set", "#8e8e8e")
     update_design()
     // Update preview
@@ -334,10 +349,5 @@
   })
 </script>
 
-<!-- <input value="" id="clipboard-preview" type="hidden"> -->
-<!-- Trigger -->
-<!-- <button class="clipboard-button">
-    <i class="far fa-clipboard"></i>
-</button> -->
 
 </html>

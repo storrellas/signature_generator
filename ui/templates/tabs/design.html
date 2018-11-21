@@ -73,9 +73,9 @@
   <label for="example-text-input" class="col-4 col-form-label">Tamaño de imagen</label>
   <div class="col-8">
     <select class="form-control signature-design" id="image-size-input">
-      <option value="small">Pequeña (50x50)</option>
-      <option value="medium">Mediana (75x75)</option>
-      <option value="large">Pequeña (100x100)</option>
+      <option value="small">Pequeña (150x150)</option>
+      <option value="medium">Mediana (200x200)</option>
+      <option value="large">Grande (250x250)</option>
     </select>
   </div>
 </div>
@@ -84,8 +84,8 @@
   <label for="" class="col-4 col-form-label">Layout</label>
   <div class="col-8">
     <select class="form-control signature-design" id="image-layout-input">
-      <option value="left">Izquierda</option>
-      <option selected value="top">Arriba</option>
+      <option selected value="left">Izquierda</option>
+      <option value="top">Arriba</option>
       <option value="right">Derecha</option>
     </select>
   </div>
@@ -110,28 +110,8 @@
           ["#600","#783f04","#7f6000","#274e13","#0c343d","#073763","#20124d","#4c1130"]
       ],
       change: function(color) {
-        //color.toHexString(); // #ff0000
         update_design()
       },
   });
 
-
-  // $("#colorpickername").spectrum({
-  //     preferredFormat: "hex",
-  //     color: "#f00",
-  //     change: function(color) {
-  //       //color.toHexString(); // #ff0000
-  //       console.log("Changing color")
-  //     }
-  // });
-
-
-  // $("#colorpickertext").spectrum({
-  //   preferredFormat: "hex",
-  //     color: "#f00",
-  //     change: function(color) {
-  //       //color.toHexString(); // #ff0000
-  //       console.log("Changing color")
-  //     }
-  // });
 </script>

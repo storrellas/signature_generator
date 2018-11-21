@@ -1,6 +1,6 @@
 {% load staticfiles %}
 
-<style type="text/css">
+<!-- <style type="text/css">
   .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -10,7 +10,7 @@
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
   }
-</style>
+</style> -->
 
 <div class="row mt-2">
   <div class="col-md-12 noselect">
@@ -40,13 +40,11 @@
 
       <table>
         <tr>
-          <td>
-            <img id="image-preview-left" alt="" src="{% static 'img/tintin.png' %}" width="50px"></img>
+          <td style="padding: 0 10px 0 0;">
+            <img id="image-preview-left" alt="" src="{% static 'img/tintin.png' %}" width="0px" style="display: none;"></img>
           </td>
-          <td>
-            <div id="social">
-              <img id="image-preview-top" alt="" src="{% static 'img/tintin.png' %}" width="50px"></img>
-            </div>
+          <td style="padding: 0 10px 0 10px; border-style: solid; border-color: blue; border-width: 0 5px 0 5px;">
+            <img id="image-preview-top" alt="" src="{% static 'img/tintin.png' %}" width="0px"></img>
 
             <div id="contact-preview" class="colorname">
               <strong>
@@ -58,18 +56,23 @@
               <span id="position-preview">Senior Manager</span>
               <span id="department-preview"> | Ventas Internacionales</span>
             </div>
-            <div id="company-preview">Clientify</div>
+            <div id="company-preview-container"><strong id="company-preview">Clientify</strong></div>
             <div id="contact">
-              <span>Telefono: </span><span id="phone-preview">+34.93.685.95.32</span>
-              <span>Mobil: </span><span id="cell-preview">+34.659.32.36.25</span>
+              <span>T: </span><span id="phone-preview">+34.93.685.95.32</span>
+              <span>M: </span><span id="cell-preview">+34.659.32.36.25</span>
             </div>
 
             <div id="contact-accounts">
-              <span id="skype-preview">Skype: m.bernal</span>
-              <span><a id="email-preview" href="mailto:m.bernal@clientify.net" target="_top" class="colortext">| Email: m.bernal@clientify.net</a></span>
-              <span><a id="website-preview" href="www.clientify.net" target="_top" class="colortext">| Web: www.clientify.net</a></span>
+              <span id="skype-preview">S: m.bernal</span>
+              <span> | E: </span>
+              <span><a id="email-preview" href="mailto:m.bernal@clientify.net" target="_top" class="colortext">m.bernal@clientify.net</a></span>
+              <span> | W: </span>
+              <span><a id="website-preview" href="www.clientify.net" target="_top" class="colortext">www.clientify.net</a></span>
             </div>
-            <div id="address-preview">C/Muntaner 203</div>
+            <div id="address-preview-container">
+              <span>A: </span>
+              <span id="address-preview">C/Muntaner 203</span>
+            </div>
 
             <div>
               <a href="#" id="facebook-preview">
@@ -86,8 +89,8 @@
               </a>
             </div>
           </td>
-          <td>
-            <img id="image-preview-right" alt="" src="{% static 'img/tintin.png' %}" width="50px"></img>
+          <td style="padding: 0 0 0 10px">
+            <img id="image-preview-right" alt="" src="{% static 'img/tintin.png' %}" width="0px"></img>
           </td>
         </tr>
       </table>
