@@ -189,9 +189,7 @@
 
 <script type="text/javascript">
 
-
   function update_preview() {
-    console.log("Update preview")
 
     // Fill contents
     $("#name-preview").text(  $("#name-input").val() )
@@ -291,13 +289,14 @@
     $("#image-preview-top").width(width)
     $("#image-preview-right").width(width)
 
-
+    // Image border
     $("#image-preview-top").hide();
     $("#image-preview-top").parent().css('padding', '');
     $("#image-preview-left").hide();
     $("#image-preview-left").parent().css('padding', '');
     $("#image-preview-right").hide();
     $("#image-preview-right").parent().css('padding', '');
+    $("#image-preview-top").parent().css('border-color', $('#colorpickername').val());
     switch( $("#image-layout-input").val() ){
       case 'left': $("#image-preview-left").show();
                    $("#image-preview-left").parent().css('padding', '0 10px 0 0');
