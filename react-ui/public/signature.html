@@ -1,0 +1,256 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Clientify</title>
+  <link rel="icon" href="{% static 'img/icon_clientify.png' %}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap + FontAwesome -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <style type=text/css>
+    /* Show it is fixed to the top */
+    body {
+      /*min-height: 75rem;*/
+      /*padding-top: 4.5rem;*/
+      /* background-color: #f3f3f4; */
+    }
+
+    .nav-tabs .active{
+      background-color: #ffffff;
+    }
+    .nav-tabs :not(.active){
+      background-color: #f3f3f4;
+      color: #495057;
+    }
+
+    .box .content{
+      background-color: #ffffff;
+      border:1px solid #dee2e6;
+    }
+
+    .color-white{
+      color: white;
+    }
+
+    .scrollable {
+        height: 1000px; /* or any value */
+        overflow-y: auto;
+    }
+
+    .tabs-preview .nav-tabs li a{
+      padding:10px 10px 0 10px
+    }
+
+
+  </style>
+
+</head>
+<body>
+
+  <section id="title">
+
+    <div class="container-fluid">
+      <div class="row bg-dark">
+          <div class="col-md-12 text-center">
+              <a class="navbar-brand color-white" href="#" style="color:white">Clientify</a>
+          </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="content"  class="scrollable">
+    <div class="container">
+      <h6 class="section-title h1">Generador de Digital Firma</h6>
+      <div class="row">
+
+
+
+        <!-- Second Column -->
+        <div class="col-md-6 box shadow" style="background-color: #ffffff;">
+          <div class="row bg-dark" style="color:white; border-radius: 5px 5px 0  0;">
+            <div class="col-md-12 box nav-link">
+               Previsualización de tu firma email
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12" style="min-height:200px">
+
+              <div class="tabs-preview tabs-bottom">
+                <div class="tab-content">
+                  <div class="tab-pane active" id="preview" style="min-height:700px">
+                    <div id="root"></div>
+                  </div>
+                  <div class="tab-pane" id="html"  style="min-height:700px">
+                    <div></div>
+                  </div>
+
+                  <ul class="nav nav-tabs">
+                    <li class="active"><a href="#preview" data-toggle="tab">Preview</a></li>
+                    <li><a href="#html" data-toggle="tab">HTML</a></li>
+                  </ul>
+
+                </div>
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- First Column -->
+      <div class="col-md-6 box">
+        <nav>
+          <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-general-tab" data-toggle="tab" href="#nav-general" role="tab" aria-controls="nav-general" aria-selected="true">General</a>
+            <a class="nav-item nav-link" id="nav-design-tab" data-toggle="tab" href="#nav-design" role="tab" aria-controls="nav-design" aria-selected="false">Diseño</a>
+          </div>
+        </nav>
+        <div class="tab-content py-3 px-3 px-sm-0 content shadow" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-general" role="tabpanel" aria-labelledby="nav-general-tab">
+            <div class="col-md-12">
+              {% include "tabs/general.html" %}
+            </div>
+          </div>
+          <div class="tab-pane fade" id="nav-design" role="tabpanel" aria-labelledby="nav-design-tab">
+            <div class="col-md-12">
+              {% include "tabs/design.html" %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- <footer class="page-footer font-small blue pt-1 bg-dark fixed-bottom">
+      <div class="footer-copyright text-center py-3 color-white">© 2018 Copyright:
+        <a href="https://clientify.net">Clientify.net</a>
+      </div>
+    </footer> -->
+    <!-- Footer -->
+
+</body>
+
+
+  <script src="../dist/bundle.js"></script>
+<script type="text/javascript">
+
+  function update_preview() {
+    console.log("Update preview")
+
+    // Fill contents
+    $("#name-preview").text(  $("#name-input").val() )
+    $("#surname-preview").text(  $("#surname-input").val() )
+    $("#position-preview").text(  $("#position-input").val() )
+    var department = $("#department-input").val()
+    if( department.length > 0 ){
+      $("#department-preview").text( " | " +department )
+    }else{
+      $("#department-preview").text("")
+    }
+    $("#company-preview").text(  $("#company-input").val() )
+    $("#phone-preview").text(  $("#phone-input").val() )
+    $("#cell-preview").text(  $("#cell-input").val() )
+
+    var skype = $("#skype-input").val()
+    if( skype.length > 0 ){
+      $("#skype-preview").text("Skype:" + skype  )
+    }else{
+      $("#skype-preview").text("")
+    }
+
+
+    var mail = $("#email-input").val()
+    $('#email-preview').attr('href', "mailto:"+mail)
+    $('#email-preview').text(mail)
+
+    var website = $("#website-input").val()
+    $('#website-preview').attr('href', website)
+    $('#website-preview').text(website)
+
+    $("#address-preview").text(  $("#address-input").val() )
+
+    // Social
+    var item = $("#facebook-input").val()
+    if( item.length > 0 ){
+      $("#facebook-preview").show()
+      $("#facebook-preview").attr('href', item)
+    }else{
+      $("#facebook-preview").hide()
+    }
+    item = $("#linkedin-input").val()
+    if( item.length > 0 ){
+      $("#linkedin-preview").show()
+      $("#linkedin-preview").attr('href', item)
+    }else{
+      $("#linkedin-preview").hide()
+    }
+    item = $("#twitter-input").val()
+    if( item.length > 0 ){
+      $("#twitter-preview").show()
+      $("#twitter-preview").attr('href', item)
+    }else{
+      $("#twitter-preview").hide()
+    }
+    item = $("#instagram-input").val()
+    if( item.length > 0 ){
+      $("#instagram-preview").show()
+      $("#instagram-preview").attr('href', item)
+    }else{
+      $("#instagram-preview").hide()
+    }
+
+    $("#image-preview").attr("src", $("#image-input").val());
+
+  }
+
+  function update_design(){
+
+
+
+    $('.signature-preview').css("font-size", $("#font-size-input").val() );
+    $('.signature-preview').css("font-family", $("#font-family-input").val() );
+
+    $('.colorname').css("color", $('#colorpickername').val() );
+    $('.colortext').css("color", $('#colorpickertext').val() );
+  }
+
+
+  $(document).ready(function(){
+    // Dump HTML content
+    $(".tabs-preview").click(function(){
+      var html = $("#preview").html()
+      $("#html").children(":first").text(html)
+    })
+
+    // Default values
+    $("#colorpickername").spectrum("set", "#8e8e8e")
+    $("#colorpickertext").spectrum("set", "#8e8e8e")
+    update_design()
+    // Update preview
+    $('.signature-field').on('input', update_preview);
+    $('.signature-design').on('change', update_design);
+  })
+</script>
+
+</html>
