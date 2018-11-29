@@ -5,8 +5,6 @@ class App extends Component{
   render(){
     return(
       <div className="App">
-        <h1>This is React Generating Content</h1>
-
         <div className="row mt-2">
           <div className="col-md-12 noselect">
               Para: <span className="disabled-color">Manuel Bernal</span>
