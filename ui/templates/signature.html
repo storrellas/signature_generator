@@ -109,28 +109,28 @@
           </div>
 
 
+          <!-- Generated Signature -->
           <div class="row mt-4 generate-signature" style="border: 1px solid black;">
             <div class="col-md-12" style="min-height:200px">
 
               <div class="tabs-preview tabs-bottom">
                 <div class="tab-content">
-                  <div class="tab-pane active" id="preview" style="min-height:700px">
-                    {% include "tabs/preview.html" %}
+                  <div class="tab-pane active" id="generated" style="min-height:700px">
                   </div>
-                  <div class="tab-pane" id="html"  style="min-height:700px">
+                  <div id="generated-html" class="tab-pane" style="min-height:700px">
                     <div class="row">
-                      <div  id="html-preview" class="col-md-12"></div>
+                      <div id="generated-html-container" class="col-md-12"></div>
                     </div>
                     <div class="row text-right">
                       <div class="col-md-11">
-                      <button class="btn btn-primary clipboard-button">Copy to Clipboard</button>
+                      <button id="generated-clipboard-button" class="btn btn-primary">Copy to Clipboard</button>
                     </div>
                     </div>
                   </div>
 
                   <ul class="nav nav-tabs">
-                    <li class="active"><a href="#preview" data-toggle="tab">Preview</a></li>
-                    <li><a href="#html" data-toggle="tab">HTML</a></li>
+                    <li class="active"><a href="#generated" data-toggle="tab">Preview</a></li>
+                    <li><a href="#generated-html" data-toggle="tab">HTML</a></li>
                   </ul>
                 </div>
             </div>
@@ -261,7 +261,6 @@
 
   function update_design(){
 
-
     $('.signature-preview').css("font-size", $("#font-size-input").val() );
     $('.signature-preview').css("font-family", $("#font-family-input").val() );
 
@@ -321,8 +320,9 @@
     // Dump HTML content
     $(".tabs-preview").click(function(){
       var html = $("#signature-preview").html()
-      $("#html-preview").text(html)
-      $("#clipboard-preview").val(html)
+      $("#generated").html(html)
+      $("#generated-html-container").text(html)
+      $("#generated-clipboard-button").val(html)
     })
 
     // Default values
@@ -333,11 +333,11 @@
     $('.signature-field').on('input', update_preview);
     $('.signature-design').on('change', update_design);
 
-    $('.clipboard-button').click(function(){
+    $('#generated-clipboard-button').click(function(){
 
       var $temp = $("<input>");
       $("body").append($temp);
-      $temp.val($("#html-preview").text()).select();
+      $temp.val($("#generated-html-container").text()).select();
       document.execCommand("copy");
       $temp.remove();
 
