@@ -98,6 +98,19 @@
 
           <div class="row">
             <div class="col-md-12" style="min-height:200px">
+              {% include "tabs/preview.html" %}
+            </div>
+          </div>
+
+          <div class="row text-center mt-4">
+            <div  id="html-preview" class="offset-md-1 col-md-10">
+              <button class="btn btn-primary btn-block generate-button">Generar Firma</button>
+            </div>
+          </div>
+
+
+          <div class="row mt-4 generate-signature" style="border: 1px solid black;">
+            <div class="col-md-12" style="min-height:200px">
 
               <div class="tabs-preview tabs-bottom">
                 <div class="tab-content">
@@ -119,14 +132,12 @@
                     <li class="active"><a href="#preview" data-toggle="tab">Preview</a></li>
                     <li><a href="#html" data-toggle="tab">HTML</a></li>
                   </ul>
-
                 </div>
-
-
             </div>
           </div>
 
         </div>
+
       </div>
 
       <!-- First Column -->
@@ -319,11 +330,17 @@
 
 
   $(document).ready(function(){
+
+    // Generar firma
+    $(".generate-signature").hide()
+    $(".generate-button").click(function(){
+      $(".generate-signature").fadeIn()
+    })
+
     // Dump HTML content
     $(".tabs-preview").click(function(){
       var html = $("#signature-preview").html()
       $("#html-preview").text(html)
-
       $("#clipboard-preview").val(html)
     })
 
