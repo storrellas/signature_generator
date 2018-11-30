@@ -88,7 +88,7 @@
 
 
 
-        <!-- Second Column -->
+        <!-- First Column -->
         <div class="col-md-6 box shadow" style="background-color: #ffffff;">
           <div class="row bg-dark" style="color:white; border-radius: 5px 5px 0  0;">
             <div class="col-md-12 box nav-link">
@@ -110,7 +110,7 @@
 
 
           <!-- Generated Signature -->
-          <div class="row mt-4 generate-signature" style="border: 1px solid black;">
+          <div class="row mt-4 generate-signature">
             <div class="col-md-12" style="min-height:200px">
 
               <div class="tabs-preview tabs-bottom">
@@ -121,7 +121,7 @@
                     <div class="row">
                       <div id="generated-html-container" class="col-md-12"></div>
                     </div>
-                    <div class="row text-right">
+                    <div class="row text-right mt-5">
                       <div class="col-md-11">
                       <button id="generated-clipboard-button" class="btn btn-primary">Copy to Clipboard</button>
                     </div>
@@ -140,7 +140,7 @@
 
       </div>
 
-      <!-- First Column -->
+      <!-- Second Column -->
       <div class="col-md-6 box">
         <nav>
           <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
@@ -308,21 +308,24 @@
     }
   }
 
+  function hide_generate_signature(){
+    $(".generate-signature").fadeOut()
+  }
 
   $(document).ready(function(){
 
     // Generar firma
-    //$(".generate-signature").hide()
+    $(".generate-signature").hide()
     $(".generate-button").click(function(){
-      $(".generate-signature").fadeIn()
-    })
 
-    // Dump HTML content
-    $(".tabs-preview").click(function(){
+      // Fill content
       var html = $("#signature-preview").html()
       $("#generated").html(html)
       $("#generated-html-container").text(html)
       $("#generated-clipboard-button").val(html)
+
+      // Show resource
+      $(".generate-signature").fadeIn()
     })
 
     // Default values
@@ -332,6 +335,12 @@
     // Update preview
     $('.signature-field').on('input', update_preview);
     $('.signature-design').on('change', update_design);
+
+    // Remove when entering new data
+    $('.signature-field').on('input', hide_generate_signature);
+    $('.signature-design').on('change', hide_generate_signature);
+
+
 
     $('#generated-clipboard-button').click(function(){
 
