@@ -112,28 +112,34 @@
           <!-- Generated Signature -->
           <div class="row mt-4 generate-signature">
             <div class="col-md-12" style="min-height:200px">
-
-              <div class="tabs-preview tabs-bottom">
-                <div class="tab-content">
-                  <div class="tab-pane active" id="generated" style="min-height:700px">
-                  </div>
-                  <div id="generated-html" class="tab-pane" style="min-height:700px">
-                    <div class="row">
-                      <div id="generated-html-container" class="col-md-12"></div>
-                    </div>
-                    <div class="row text-right mt-5">
-                      <div class="col-md-11">
-                      <button id="generated-clipboard-button" class="btn btn-primary">Copy to Clipboard</button>
-                    </div>
-                    </div>
-                  </div>
-
-                  <ul class="nav nav-tabs">
-                    <li class="active"><a href="#generated" data-toggle="tab">Preview</a></li>
-                    <li><a href="#generated-html" data-toggle="tab">HTML</a></li>
-                  </ul>
+              <nav>
+                <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                  <a class="nav-item nav-link active" id="nav-preview-tab" data-toggle="tab" href="#nav-preview" role="tab" aria-controls="nav-preview" aria-selected="true">Previsualización</a>
+                  <a class="nav-item nav-link" id="nav-html-tab" data-toggle="tab" href="#nav-html" role="tab" aria-controls="nav-html" aria-selected="false">HTML</a>
                 </div>
-            </div>
+              </nav>
+              <div class="tab-content py-3 px-3 px-sm-0 content shadow" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-preview" role="tabpanel" aria-labelledby="nav-preview-tab">
+                  <div class="col-md-12">
+                    <div id="generated"></div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="nav-html" role="tabpanel" aria-labelledby="nav-design-tab">
+                  <div class="col-md-12">
+                    <div id="generated-html" class="tab-pane" style="min-height:700px">
+                      <div class="row">
+                        <div id="generated-html-container" class="col-md-12"></div>
+                      </div>
+                      <div class="row text-right mt-5">
+                        <div class="col-md-11">
+                        <button id="generated-clipboard-button" class="btn btn-primary">Copy to Clipboard</button>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
           </div>
 
         </div>
