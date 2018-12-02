@@ -121,7 +121,16 @@
               <div class="tab-content py-3 px-3 px-sm-0 content shadow" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-preview" role="tabpanel" aria-labelledby="nav-preview-tab">
                   <div class="col-md-12">
-                    <div id="generated" class="colortext"></div>
+                    <div id="generated" class="tab-pane" style="min-height:700px">
+                      <div class="row text-center mt-1">
+                        <div class="offset-md-2 col-md-8">
+                          <button id="generated-clipboard-button" class="btn btn-secondary btn-block" disabled>Ya puedes copiar y pegar tu firma</button>
+                        </div>
+                      </div>
+                      <div class="row mt-3">
+                        <div id="generated-container" class="col-md-12 colortext"></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="tab-pane fade" id="nav-html" role="tabpanel" aria-labelledby="nav-design-tab">
@@ -326,7 +335,7 @@
 
       // Fill content
       var html = $("#signature-preview").html()
-      $("#generated").html(html)
+      $("#generated-container").html(html)
       $("#generated-html-container").text(html)
       $("#generated-clipboard-button").val(html)
 
