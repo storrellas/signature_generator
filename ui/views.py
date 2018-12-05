@@ -10,15 +10,13 @@ class SignatureGeneratorView(View):
         context = {}
         return render(request, 'signature.html', context)
 
-
     def post(self, request):
-        received_json_data=json.loads(request.body)
-        print(received_json_data['name'])
-        print(received_json_data['surname'])
-        print(received_json_data['email'])
-
-
-
-        #context = {}
-        #return render(request, 'signature.html', context)
-        return JsonResponse({'status':'false','message':'stored'}, status=200)
+        json_data = json.loads(request.body)
+        try:
+            visitor = SignatureVistor(name=json_data['name'],
+                                      surname=json_data['surname'],
+                                      email=json_data['email'])
+            visitor.save()
+        except Exception as e:
+            return JsonResponse({'message': e.message}, status=400)
+        return JsonResponse(json_data, status=200)
