@@ -268,6 +268,13 @@
     }else{
       $("#instagram-preview").hide()
     }
+    item = $("#whatsapp-input").val()
+    if( item.length > 0 ){
+      $("#whatsapp-preview").show()
+      $("#whatsapp-preview").attr('href', "https://api.whatsapp.com/send?phone=" + item)
+    }else{
+      $("#whatsapp-preview").hide()
+    }
 
     $("#image-preview-top").attr("src", $("#image-input").val());
     $("#image-preview-left").attr("src", $("#image-input").val());
