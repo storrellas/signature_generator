@@ -151,6 +151,9 @@
 
 <script type="text/javascript">
 
+  //
+  // Updates contents according to inputs
+  //
   function update_preview() {
 
     // Fill contents
@@ -236,14 +239,20 @@
 
   }
 
+  //
+  // Updates design according to inputs
+  //
   function update_design(){
 
+    // Updates font
     $('.signature-preview, #generated-container').css("font-size", $("#font-size-input").val() );
     $('.signature-preview, #generated-container').css("font-family", $("#font-family-input").val() );
 
+    // Updates color
     $('.colorname').css("color", $('#colorpickername').val() );
     $('.colortext').css("color", $('#colorpickertext').val() );
 
+    // Change image size
     var width = 200;
     switch( $("#image-size-input").val() ){
       case 'small': width = 150;
@@ -257,7 +266,7 @@
     $("#image-preview-top").width(width)
     $("#image-preview-right").width(width)
 
-    // Image border
+    // Image border + location
     $("#image-preview-top").hide();
     $("#image-preview-top").parent().css('padding', '');
     $("#image-preview-left").hide();
@@ -285,9 +294,6 @@
     }
   }
 
-  function hide_generate_signature(){
-    $(".generate-signature").fadeOut()
-  }
 
   $(document).ready(function(){
 
@@ -323,16 +329,18 @@
     $("#colorpickername").spectrum("set", "#666666")
     $("#colorpickertext").spectrum("set", "#8e8e8e")
     update_design()
-    // Update preview
+
+    // Bind events
     $('.signature-field').on('input', update_preview);
     $('.signature-design').on('change', update_design);
 
     // Remove when entering new data
-    $('.signature-field').on('input', hide_generate_signature);
-    $('.signature-design').on('change', hide_generate_signature);
+    $('.signature-field, .signature-design').on('input', function(){
+      $(".generate-signature").fadeOut()
+    });
 
 
-
+    // Clipboard click
     $('#generated-clipboard-button').click(function(){
 
       var $temp = $("<input>");
