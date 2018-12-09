@@ -41,15 +41,6 @@
       border:1px solid #dee2e6;
     }
 
-    .color-white{
-      color: white;
-    }
-
-    .scrollable {
-        height: 1000px; /* or any value */
-        overflow-y: auto;
-    }
-
     .tabs-preview .nav-tabs li a{
       padding:10px 10px 0 10px
     }
@@ -60,7 +51,7 @@
 </head>
 <body>
 
-  <section id="content" class="scrollable" style="margin-top:50px">
+  <section id="content" class="mt-5">
     <div class="container">
 
       <div class="row">
@@ -69,12 +60,12 @@
         <div class="col-md-6 box shadow">
           <div class="row">
             <div class="col-md-12 p-0">
-               <img alt="" src="{% static 'img/header.png' %}" style="width:100%"></img>
+               <img class="w-100" alt="" src="{% static 'img/header.png' %}"></img>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-md-12" style="min-height:200px">
+            <div class="col-md-12">
               {% include "preview.html" %}
             </div>
           </div>
